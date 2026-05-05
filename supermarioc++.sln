@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36603.0 d17.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "supermarioc++", "supermarioc++\supermarioc++.vcxproj", "{BEBC02A6-A871-4308-94D7-B3A108FD9BEF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BEBC02A6-A871-4308-94D7-B3A108FD9BEF}.Debug|x64.ActiveCfg = Debug|x64
+		{BEBC02A6-A871-4308-94D7-B3A108FD9BEF}.Debug|x64.Build.0 = Debug|x64
+		{BEBC02A6-A871-4308-94D7-B3A108FD9BEF}.Debug|x86.ActiveCfg = Debug|Win32
+		{BEBC02A6-A871-4308-94D7-B3A108FD9BEF}.Debug|x86.Build.0 = Debug|Win32
+		{BEBC02A6-A871-4308-94D7-B3A108FD9BEF}.Release|x64.ActiveCfg = Release|x64
+		{BEBC02A6-A871-4308-94D7-B3A108FD9BEF}.Release|x64.Build.0 = Release|x64
+		{BEBC02A6-A871-4308-94D7-B3A108FD9BEF}.Release|x86.ActiveCfg = Release|Win32
+		{BEBC02A6-A871-4308-94D7-B3A108FD9BEF}.Release|x86.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F1C78FE9-8041-4C2A-A36B-CA9B0A440C16}
+	EndGlobalSection
+EndGlobal
