@@ -7,7 +7,7 @@
 #include"scene.h"
 #include"windows.h"
 #pragma comment(lib,"Winmm.lib")
-//默认mario生命数为3条
+//默认mario生命数为5条
 int life = LIFE;
 int world = 1;
 int main()

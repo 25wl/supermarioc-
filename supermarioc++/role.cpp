@@ -31,7 +31,7 @@ role::role(int world)
 	shootTimeInterval = 0;
 	score = 0;
 	//加载精灵图
-	loadimage(&img_mario, _T("res\\role.bmp"));
+	loadimage(&img_mario, _T("res\\mario.bmp"));
 	loadimage(&img_enemy, _T("res\\ani.bmp"));
 	loadimage(&img_showBomb, _T("res\\ani.bmp"));
 	loadimage(&img_bullet, _T("res\\ani.bmp"));
@@ -350,25 +350,61 @@ void role::show()
 	else if (mario.direction.x == -1)
 		mario.turn = -1;
 
-	// 如果主角死亡
+	int frameX = 0;
+
+	// ======================
+	// 1. 死亡状态
+	// ======================
 	if (mario.died == true)
 	{
-		putimage(mario.x, mario.y, WIDTH, HEIGHT, &img_mario, 2 * WIDTH, HEIGHT, SRCAND);
-		putimage(mario.x, mario.y, WIDTH, HEIGHT, &img_mario, 2 * WIDTH, 0, SRCPAINT);
+		frameX = 5 * WIDTH;  // 死亡帧 X
+
+		// 蒙版在下半图 Y=HEIGHT，彩色在上半图 Y=0
+		putimage(mario.x, mario.y, WIDTH, HEIGHT, &img_mario, frameX, HEIGHT, SRCAND);
+		putimage(mario.x, mario.y, WIDTH, HEIGHT, &img_mario, frameX, 0, SRCPAINT);
 	}
-	else // 正常显示
+	// ======================
+	// 2. 正常状态
+	// ======================
+	else
 	{
-		if (mario.turn == 1) // 向右
+		if (mario.turn == 1)  // 向右
 		{
-			putimage(mario.x, mario.y, WIDTH, HEIGHT, &img_mario, (mario_iframe - 1) * WIDTH, HEIGHT, SRCAND);
-			putimage(mario.x, mario.y, WIDTH, HEIGHT, &img_mario, (mario_iframe - 1) * WIDTH, 0, SRCPAINT);
+			if (mario.isFly) {
+				// 跳跃 9~13
+				static double t = 0; t += TIME;
+				int jp = (int)(t * 10) % 7;
+				frameX = (6 + jp) * WIDTH;
+			}
+			else if (mario.direction.x == 0) {
+				frameX = 6 * WIDTH;  // 静止
+			}
+			else {
+				frameX = mario_iframe * WIDTH;  // 走路 0~2
+			}
+
+			putimage(mario.x, mario.y, WIDTH, HEIGHT, &img_mario, frameX, HEIGHT, SRCAND);
+			putimage(mario.x, mario.y, WIDTH, HEIGHT, &img_mario, frameX, 0, SRCPAINT);
 		}
-		else // 向左
+		else  // 向左
 		{
-			putimage(mario.x, mario.y, WIDTH, HEIGHT, &img_mario, (mario_iframe - 1) * WIDTH + 3 * WIDTH, HEIGHT, SRCAND);
-			putimage(mario.x, mario.y, WIDTH, HEIGHT, &img_mario, (mario_iframe - 1) * WIDTH + 3 * WIDTH, 0, SRCPAINT);
+			if (mario.isFly) {
+				static double t = 0; t += TIME;
+				int jp = (int)(t * 10) % 7;
+				frameX = (20 - jp) * WIDTH;
+			}
+			else if (mario.direction.x == 0) {
+				frameX = 21 * WIDTH;  // 左静止
+			}
+			else {
+				frameX = (27 - mario_iframe) * WIDTH;  // 左走路
+			}
+
+			putimage(mario.x, mario.y, WIDTH, HEIGHT, &img_mario, frameX, HEIGHT, SRCAND);
+			putimage(mario.x, mario.y, WIDTH, HEIGHT, &img_mario, frameX, 0, SRCPAINT);
 		}
 	}
+
 
 	// 敌人动画帧
 	enemy_iframe += TIME * 5;
