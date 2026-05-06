@@ -91,8 +91,32 @@ void role::createEnemy(int world)
 	
 		}
 	}
-	//第二关
-	//第三关
+	if (world == 2)
+	{
+		
+		Enemy emy[] = { {17,8,1},{23,5,-1},{32,9,1},{38,9,-1},{50,9,-1},{53,9,1},{44,9,1},{97,6,1},{99,4,1} };//敌人位置
+		int i = 0;
+		while (i < sizeof(emy) / sizeof(emy[0]))
+		{
+			myEnemy[i].x = emy[i].x * WIDTH;
+			myEnemy[i].y = emy[i].y * HEIGHT;
+			myEnemy[i].turn = emy[i].turn;
+			i++;
+
+		}
+	}
+	else if (world == 3)
+	{
+		Enemy emy[] = { {23,3,-1},{31,3,1},{39,3,-1},{50,3,-1},{68,3,1},{64,8,-1},{85,8,1} };
+		int i = 0;
+		while (i <= sizeof(emy) / sizeof(emy[0]))
+		{
+			myEnemy[i].x = emy[i].x * WIDTH;
+			myEnemy[i].y = emy[i].y * HEIGHT;
+			myEnemy[i].turn = emy[i].turn;
+			i++;
+		}
+	}
 }
 //爆炸效果
 void role::setBomb(int x, int y)

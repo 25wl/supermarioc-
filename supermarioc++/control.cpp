@@ -205,8 +205,8 @@ void control::gameStart()
 				cleardevice();        // 清屏
 				rectangle(50, 50, 213, 220);  // 画文本框
 				outtextxy(52, 52, _T("游戏介绍："));
-				outtextxy(52, 82, _T("超级玛丽变"));
-				outtextxy(52, 102, _T("身超级蘑菇"));
+				outtextxy(52, 82, _T("超级玛丽"));
+				outtextxy(52, 102, _T("击败蘑菇大怪闯关"));
 				// 绘制右下角返回按钮
 				RECT R1 = { XSIZE - 46,YSIZE - 26,XSIZE - 2,YSIZE - 2 };
 				rectangle(XSIZE - 46, YSIZE - 26, XSIZE - 2, YSIZE - 2);

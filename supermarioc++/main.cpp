@@ -9,7 +9,7 @@
 #pragma comment(lib,"Winmm.lib")
 //默认mario生命数为5条
 int life = LIFE;
-int world = 1;
+int world = 3;
 int main()
 {
 	// 创建游戏窗口（宽XSIZE，高YSIZE）
@@ -60,7 +60,7 @@ int main()
 		{
 			mciSendString(_T("stop music_bg"), NULL, 0, NULL);
 			life = LIFE;
-			world = 1;
+			world = 3;//检验
 			myRole = role(world);
 			myScene = scene(world);
 			myCtrl.gameStart();
