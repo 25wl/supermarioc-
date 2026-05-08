@@ -223,7 +223,7 @@ void control::gameStart()
 				outtextxy(52, 72, _T("×óÒÆ£ºA¼ü"));
 				outtextxy(52, 92, _T("ÓÒÒÆ£ºD¼ü"));
 				outtextxy(52, 112, _T("·¢Éä£ºJ¼ü"));
-				outtextxy(52, 132, _T("ÌøÔ¾£ºW¼ü/K¼ü"));
+				outtextxy(52, 132, _T("ÌøÔ¾£ºW¼ü"));
 				outtextxy(52, 152, _T("ÔÝÍ££ºEsc¼ü"));
 				// ·µ»Ø°´Å¥
 				RECT R2 = { XSIZE - 46,YSIZE - 26,XSIZE - 2,YSIZE - 2 };
