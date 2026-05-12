@@ -1,0 +1,7 @@
+.vs/
+*.ipch
+*.log
+Debug/
+Release/
+*.obj
+*.pdb
