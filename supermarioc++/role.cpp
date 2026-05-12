@@ -376,9 +376,6 @@ void role::show()
 
 	int frameX = 0;
 
-	// ======================
-	// 1. ËÀÍö×´Ì¬
-	// ======================
 	if (mario.died == true)
 	{
 		frameX = 5 * WIDTH;  // ËÀÍöÖ¡ X
@@ -387,9 +384,6 @@ void role::show()
 		putimage(mario.x, mario.y, WIDTH, HEIGHT, &img_mario, frameX, HEIGHT, SRCAND);
 		putimage(mario.x, mario.y, WIDTH, HEIGHT, &img_mario, frameX, 0, SRCPAINT);
 	}
-	// ======================
-	// 2. Õý³£×´Ì¬
-	// ======================
 	else
 	{
 		if (mario.turn == 1)  // ÏòÓÒ

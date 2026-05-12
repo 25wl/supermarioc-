@@ -20,17 +20,17 @@ struct Mario
 	double vY;//竖直方向速度
 	int turn;//运动方向
 	POINT direction;//移动方向点
-	bool isFly;//是否在空中
-	bool isShoot;//是否可以射击
-	bool died;//是否死亡
-	bool ending;//是否将要过关
-	bool passed;//是否已经过关
+	bool isFly;
+	bool isShoot;
+	bool died;
+	bool ending;
+	bool passed;
 };
 struct Enemy
 {
 	int x;
 	int y;
-	int turn;//敌人移动反向
+	int turn;
 };
 struct Bullet
 {
@@ -65,8 +65,8 @@ private:
 	IMAGE img_showBomb;//爆炸效果的
 	IMAGE img_bullet;//子弹的
 	 
-	bool shootButtonDown;//是否按下射击键
-	double shootTimeInterval;//子弹发射冷却计时器
+	bool shootButtonDown;
+	double shootTimeInterval;
 	int mario_iframe;//mario动画帧图
 	double enemy_iframe;//敌人动画帧
 	double bomb_iframe[BOMB_NUMBER];//爆炸动画帧
@@ -74,12 +74,12 @@ private:
 	int score;
 	//成员函数
 	//碰撞检测
-	Map* touchMap(int x, int y, scene* myscene);//碰到了地图的哪块坐标
-	POINT* touchCoins(int x, int y, scene* myScene);//是否吃到了金币
-	POINT* touchFood(int x, int y, scene* myscene);//mario是否吃到道具
-	Enemy* touchEnemy(int x, int y, Enemy* emy);//是否碰到敌人
+	Map* touchMap(int x, int y, scene* myscene);
+	POINT* touchCoins(int x, int y, scene* myScene);
+	POINT* touchFood(int x, int y, scene* myscene);
+	Enemy* touchEnemy(int x, int y, Enemy* emy);
 	bool isTouch(POINT* p1, POINT* p2);//两点是否相碰
-	void setBomb(int x, int y);//创建爆炸效果
+	void setBomb(int x, int y);
 	void setBullet(int x, int y);//创建子弹
 	void bulletFlying(Bullet* p, scene* myscene);//子弹飞行逻辑
 public:
